@@ -18,8 +18,9 @@ public class JogoServices {
         return jogos;
     }
 
-    public void save(Jogos jogo) {
+    public Jogos save(Jogos jogo) {
         repo.save(jogo);
+        return jogo;
     }
 
     public Jogos get(Long id_jogo) throws JogoNotFoundException {
@@ -31,10 +32,6 @@ public class JogoServices {
     }
 
     public void delete(Long id_jogo) throws JogoNotFoundException {
-        // Long count = repo.countById(id_jogo);
-//        if (count == null || count == 0) {
-//            throw new JogoNotFoundException("Não foi encontrado o jogo de id=".concat(String.valueOf(id_jogo)));
-//        }
         repo.deleteById(id_jogo);
     }
 }
